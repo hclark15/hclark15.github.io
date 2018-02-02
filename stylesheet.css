@@ -1,1 +1,21 @@
-Hello World
+@charset "utf-8";
+
+body{
+	font-family: serif;
+	font-size: medium;
+	line-height: 120%;
+	background-color: #FFB6C1;
+	color: #FFFFF0;
+}
+header{
+	letter-spacing: 2px;
+	font-family: serif;
+	font-size: large;
+	font-weight: bolder;
+
+}
+p{
+	line-height: 2;
+	font-size: medium;
+	font-family: monospace;
+}
