@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+ <head>
+ <title>
+   javascript intro
+  </title>
+  <link rel = "stylesheet" type = "text/css" href = "https://hclark15.github.io/mystylesheet.css">
+ </head>
+<body>
+  <p> This page is to demo javascript </p>
+  <p id="click message"> Click here for a message! </p>
+  <script>
+    document.getElementById("click message").onclick= 
+      function(){firstFunction()};
+    function firstFunction(){
+      document.getElementById("click message").innerHTML = "Thanks for clicking! Have a great day!!";
+    }
+ </script>
+
+  <button onclick="window.location='http://hclark15.github.io/index.html';">Back to Index Page</button>
+ <button type = "button" onclick = "secondFunction()"> Change Background to Blue </button>
+ <script>
+  function secondFunction(){
+   document.body.style.backgroundColor="blue";
+  }
+ </script>
+</body>
+</html>
