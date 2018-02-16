@@ -1,40 +1,40 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title> Javascript Practice -- Objects</title>
-<link rel ="stylesheet" href ="https://hclark15.github.io/mystylesheet.css">
+<title> Javascript Practice Objects</title>
+<link rel ="stylesheet" href ="https://hclark15.github.io/stylesheet.css">
 <script>
-	var songs = [
-	{
-		"Title":"One of Us Cannot Be Wrong",
-		"Artist":"Leonard Cohen",
-		"Album":"Songs of Leonard Cohen",
-		"Runtime":"4:29"
-	},
-	{
-		"Title":"From Eden"
-		"Artist":"Hozier",
-		"Album":"From Eden EP",
-		"Runtime":"3:42"
-	},
-	{
-		"Title":"Midnight Rider",
-		"Artist":"The Allman Brothers Band",
-		"Album":"A Decade of Hits 1969-1979",
-		"Runtime":"2:59"
-	},
-	{
-		"Title":"Future People",
-		"Artist":"Alabama Shakes",
-		"Album":"Sound & Colour",
-		"Runtime":"3:21"
-	},
-	{
-		"Title":"Way Over Yonder",
-		"Artist":"Carole King",
-		"Album":"Tapestry",
-		"Runtime":"4:43"
-	}
+	var songsonplaylist = [
+		{
+			"Title":"One of Us Cannot Be Wrong",
+			"Artist":"Leonard Cohen",
+			"Album":"Songs of Leonard Cohen",
+			"Runtime":"4:29"
+		},
+		{
+			"Title":"From Eden"
+			"Artist":"Hozier",
+			"Album":"From Eden EP",
+			"Runtime":"3:42"
+		},
+		{
+			"Title":"Midnight Rider",
+			"Artist":"The Allman Brothers Band",
+			"Album":"A Decade of Hits 1969-1979",
+			"Runtime":"2:59"
+		},
+		{
+			"Title":"Future People",
+			"Artist":"Alabama Shakes",
+			"Album":"Sound & Colour",
+			"Runtime":"3:21"
+		},
+		{
+			"Title":"Way Over Yonder",
+			"Artist":"Carole King",
+			"Album":"Tapestry",
+			"Runtime":"4:43"
+		}
 	];
 </script>
 </head>
@@ -43,25 +43,28 @@
 	<table id="playlist"></table><br><br>
 	<table>
 		<thead>
-			<tr><th>Title</th><th>Artist</th><th>Runtime</th></tr>
+			<tr><th>Title</th><th>Artist</th><th>Length of Song</th></tr>
 		</thead>
 		<tbody id = "fivesongs">
 		</tbody>
 	</table>
 	<script>
 		var text="";
-		var newtext="",
-		for(var x in songs){
-			if(songs.hasOwnProperty(x)){
-				var obj = songs[x];
+		var newtext="";
+		for(var x in songsonplaylist){
+			if(songsonplaylist.hasOwnProperty(x)){
+				var obj = songsonplaylist[x];
 				for(var y in obj){
 					if(obj.hasOwnProperty(y)){
-						text+= "<tr><td align ='right'>"+y+"</td><td>"+obj[y]+"</td></tr>";
+						text += "<tr><td align ='right'>" + y + "</td><td>" + obj[y] + "</td></tr>";
 					}
 				}
+				newtext += "<tr><td> + obj['Title'] + "</td><td>" + obj['Artist'] + "</td></tr>"
 			}
+			
 		}
-		document.getElementById("playlist").innerHTML - text;
+		document.getElementById("playlist").innerHTML = text;
+		document.getElementById("fivesongs").innerHTML = newtext;
 	</script>
 
 </body>
