@@ -1,10 +1,9 @@
-<!DOCTYPE html>
 <html>
 <head>
 <title> Javascript Practice Objects</title>
 <link rel ="stylesheet" href ="https://hclark15.github.io/stylesheet.css">
 <script>
-	var songsonplaylist = [
+	var users = [
 		{
 			"Title":"One of Us Cannot Be Wrong",
 			"Artist":"Leonard Cohen",
@@ -40,31 +39,31 @@
 </head>
 <body>
 	<h1>Playlist Table</h1>
-	<table id="playlist"></table><br><br>
+	<table id="people"></table><br><br>
 	<table>
 		<thead>
 			<tr><th>Title</th><th>Artist</th><th>Length of Song</th></tr>
 		</thead>
-		<tbody id = "fivesongs">
+		<tbody id = "newpeople">
 		</tbody>
 	</table>
 	<script>
 		var text="";
 		var newtext="";
-		for(var x in songsonplaylist){
-			if(songsonplaylist.hasOwnProperty(x)){
-				var obj = songsonplaylist[x];
+		for(var x in users){
+			if(users.hasOwnProperty(x)){
+				var obj = users[x];
 				for(var y in obj){
 					if(obj.hasOwnProperty(y)){
 						text += "<tr><td align ='right'>" + y + "</td><td>" + obj[y] + "</td></tr>";
 					}
 				}
-				newtext += "<tr><td> + obj['Title'] + "</td><td>" + obj['Artist'] + "</td></tr>"
+				newtext += "<tr><td>" + obj['Title'] + "</td><td>" + obj['Artist'] + "</td></tr>";
 			}
 			
 		}
-		document.getElementById("playlist").innerHTML = text;
-		document.getElementById("fivesongs").innerHTML = newtext;
+		document.getElementById("people").innerHTML = text;
+		document.getElementById("newpeople").innerHTML = newtext;
 	</script>
 
 </body>
