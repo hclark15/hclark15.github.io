@@ -11,7 +11,7 @@
 				"Runtime":"4:29"
 			},
 			{
-				"Title":"From Eden"
+				"Title":"From Eden",
 				"Artist":"Hozier",
 				"Album":"From Eden EP",
 				"Runtime":"3:42"
@@ -35,22 +35,7 @@
 				"Runtime":"4:43"
 			}
 		];
-	</script>
-	</head>
-	<body>
-		<h1>Playlist Table</h1>
-		<h2>table below</h2>
-		<br><br>
-		<table id ="playlist">
-			<thead>
-				<tr><th>Title</th><th>Artist</th><th>Album</th><th>Length of Song</th></tr>
-			</thead>
-			<tbody id = "songinfo">
-		
-			</tbody>
-		</table>
-		<script>
-			var text="";
+		var text="";
 			var newtext="";
 			for(var x in users){
 				if(users.hasOwnProperty(x)){
@@ -66,6 +51,19 @@
 		}
 		document.getElementById("songinfo").innerHTML = text;
 	</script>
-
+	</head>
+	<body>
+		<h1>Playlist Table</h1>
+		<h2>table below</h2>
+		<br><br>
+		<table id ="playlist">
+			<thead>
+				<tr><th>Title</th><th>Artist</th><th>Album</th><th>Length of Song</th></tr>
+			</thead>
+			<tbody id = "songinfo">
+		
+			</tbody>
+		</table>
+		
 	</body>
 </html>
