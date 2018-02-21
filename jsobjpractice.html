@@ -36,15 +36,17 @@
 			}
 		];
 		var text="";
-			var newtext="";
 			for(var x in users){
 				if(users.hasOwnProperty(x)){
 				var obj = users[x];
+				text=text+"<tr>";
 				for(var y in obj){
 					if(obj.hasOwnProperty(y)){
-						text += "<tr><td align ='right'>" + y + "</td><td>" + obj[y] + "</td></tr>";
+						text += "<td align ='right'>" + y + "</td><td>" + obj[y] + "</td>";
 					}
 				}
+				
+				text=text+"</tr>";
 				
 			}
 			
