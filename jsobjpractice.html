@@ -38,15 +38,11 @@
 		var text="";
 			for(var x in users){
 				if(users.hasOwnProperty(x)){
-				var obj = users[x];
-				text=text+"<tr>";
-				for(var y in obj){
-					if(obj.hasOwnProperty(y)){
-						text += "<td align ='right'>" + y + "</td><td>" + obj[y] + "</td>";
-					}
-				}
-				
-				text=text+"</tr>";
+					var obj = users[x];
+					text += "<tr><td>" + obj['Title'] + "</td><td>" + 
+						obj['Artist'] + "</td><td>" + 
+						obj['Album'] + "</td><td>" +
+						obj['Runtime'] + "</td></tr>";
 				
 			}
 			
