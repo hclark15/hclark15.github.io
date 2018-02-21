@@ -37,7 +37,9 @@
 		];
 		var text="";
 			for(var x in users){
+				console.log("in for loop");
 				if(users.hasOwnProperty(x)){
+					console.log("in if statement");
 					var obj = users[x];
 					text += "<tr><td>" + obj['Title'] + "</td><td>" + 
 						obj['Artist'] + "</td><td>" + 
