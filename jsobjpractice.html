@@ -68,11 +68,11 @@
 		var numSongs=0;
 		var numArtist=0;
 		function timeCalcMin(d){
-			totalMin+=d;
+			totalMin+=parseInt(d);
 			return d;
 		}
 		function timeCalcSec(m){
-			totalSec+=m;
+			totalSec+=parseInt(m);
 			if(totalSec>60){
 				totalMin+=1;
 				totalSec=totalSec-60;
@@ -98,7 +98,7 @@
 			
 		}
 		newText="<tr><td>"+numSongs+"</td><td>"+numArtist
-			+"/td><td>"+totalMin+":"+totalSec+"</td></tr>";
+			+"</td><td>"+totalMin+":"+totalSec+"</td></tr>";
 		document.getElementById("songinfo").innerHTML = text;
 		document.getElementById("statsTable").innerHTML = newText;
 		</script>
