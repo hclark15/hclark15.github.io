@@ -90,14 +90,15 @@
 						obj['Artist'] + "</td><td>" + 
 						obj['Album'] + "</td><td>" +			
 						timeCalcMin(obj['Runtime min']) + ":"+
-						timeCalcSec(obj['Runtime Sec'])+
+						timeCalcSec(obj['Runtime sec'])+
 						"</td></tr>";
 				numArtist++;
 				numSongs++;
 			}
 			
 		}
-		newText="<tr><td>"+numArtist+"</td><td>"+numSongs+"/td><td>"+totalMin+":"+totalSec+"</td></tr>";
+		newText="<tr><td>"+numSongs+"</td><td>"+numArtist
+			+"/td><td>"+totalMin+":"+totalSec+"</td></tr>";
 		document.getElementById("songinfo").innerHTML = text;
 		document.getElementById("statsTable").innerHTML = newText;
 		</script>
