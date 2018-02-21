@@ -3,36 +3,41 @@
 	<title> Javascript Practice Objects</title>
 	<link rel ="stylesheet" href ="https://hclark15.github.io/stylesheet.css">
 	<script>
-		var users = [
+		var songs = [
 			{
 				"Title":"One of Us Cannot Be Wrong",
 				"Artist":"Leonard Cohen",
 				"Album":"Songs of Leonard Cohen",
-				"Runtime":"4:29"
+				"Runtime min":"4",
+				"Runtime sec":"29"
 			},
 			{
 				"Title":"From Eden",
 				"Artist":"Hozier",
 				"Album":"From Eden EP",
-				"Runtime":"3:42"
+				"Runtime min":"3",
+				"Runtime sec":"42"
 			},
 			{
 				"Title":"Midnight Rider",
 				"Artist":"The Allman Brothers Band",
 				"Album":"A Decade of Hits 1969-1979",
-				"Runtime":"2:59"
+				"Runtime min":"2",
+				"Runtime sec":"59"
 			},
 			{
 				"Title":"Future People",
 				"Artist":"Alabama Shakes",
 				"Album":"Sound & Colour",
-				"Runtime":"3:21"
+				"Runtime min":"3",
+				"Runtime sec":"21"
 			},
 			{
 				"Title":"Way Over Yonder",
 				"Artist":"Carole King",
 				"Album":"Tapestry",
-				"Runtime":"4:43"
+				"Runtime min":"4",
+				"Runtime sec:"43"
 			}
 		];
 		
@@ -49,22 +54,52 @@
 		
 			</tbody>
 		</table>
+		<table id="playlist2">
+			<thead>
+				<tr><th>Number of Songs</th><th>Number of Artists</th><th>Total time to listen to playlist</th></tr>
+			</thead>
+			<tbody id = "statsTable">
+			</tbody>
+		</table>
+				
 	<script>
+		var totalMin=0;
+		var totalSec=0;
+		var numSongs=0;
+		var numArtist=0;
+		function timeCalcMin(d){
+			totalMin+=d;
+			return d;
+		}
+		function timeCalcSec(m){
+			totalSec+=m'
+			if(totalSec>60){
+				totalMin+=1;
+				totalSec=totalSec-60;
+			}
+			return m;
+		}
+			
 		var text="";
-			for(var x in users){
+			for(var x in songs){
 				console.log("in for loop");
-				if(users.hasOwnProperty(x)){
+				if(songs.hasOwnProperty(x)){
 					console.log("in if statement");
-					var obj = users[x];
+					var obj = songs[x];
 					text += "<tr><td>" + obj['Title'] + "</td><td>" + 
 						obj['Artist'] + "</td><td>" + 
-						obj['Album'] + "</td><td>" +
-						obj['Runtime'] + "</td></tr>";
-				
+						obj['Album'] + "</td><td>" +			
+						timeCalcMin(obj['Runtime min']) + ":"+
+						timeCalcSec(obj['Runtime Sec'])+
+						"</td></tr>";
+				numArtist++;
+				numSongs++;
 			}
 			
 		}
+		newText="<tr><td>"+numArtist+"</td><td>"+numSongs+"/td><td>"+totalMin+":"+totalSec+"</td></tr>";
 		document.getElementById("songinfo").innerHTML = text;
+		document.getElementById("statsTable").innerHTML = newText;
 		</script>
 		
 	</body>
