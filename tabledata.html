@@ -242,8 +242,8 @@ var text = "";
 	/* text += "<tr><td colspan='4'>Total Days</td><td align='center' class='totnum'>" + totdays + "</td></tr>"; */
 	document.getElementById("orginfo").innerHTML = text;
 	
-	document.getElementsByTagName("tr").onmouseover = function() {mouseOver()};
-	document.getElementsByTagName("tr").onmouseover=function(){mouseOut()};
+	document.getElementsByTagName("tr").onmouseover = function(){mouseOver()};
+	document.getElementsByTagName("tr").onmouseout = function(){mouseOut()};
 	
 	function mouseOver(){
 		document.getElementsByTagName("tr").style.color = "red";
