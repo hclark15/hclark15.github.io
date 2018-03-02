@@ -210,7 +210,7 @@ var organizations = [
 <body>
 <!-- Feel free to add empty tags. Data shouldn't be here. -->
 	<div id="org_table">
-		<table border = "1">
+		<table>
 			<thead>
 				<tr><th>Region</th><th>Country</th><th>Country Income Level</th><th>Organization Name</th>
 					<th>Organization Type</th><th>Sectors</th><th>Description</th><th>City</th>
@@ -221,6 +221,10 @@ var organizations = [
 		
 			</tbody>
 		</table>
+		<table>
+		<tbody id ="stats">
+		</tbody>
+		</table>
 	</div>
 
 <script>
@@ -228,6 +232,31 @@ var organizations = [
 console.log(organizations[0]); 
 // Your JavaScript code goes here
 var text = "";
+var newText="";
+var orgNum=0;
+var income=0;
+var year=0;
+
+function numOfOrganizations(){
+	orgNum++;
+}
+fuction numOfHighIncome(d){
+	if(d=="High income"){
+		income++;
+	}
+}
+function numOfOrgYear(m){
+	if(parseInt(m)>=2000){
+		year++;
+	}
+}
+function generateNewText(){
+	return "<tr><td colspan='4'>Total Organizations </td><td align='center'>" + orgNum + "</td></tr>"
+	+ "<tr><td = colspan'4'> Number of High Income Countries </td><td align = 'center'>" + income +"</td></tr>"
+	 + "<tr><td colspan='4'>Number of Organizations Created After 2000</td><td align='center'>" + year + "</td></tr>";
+
+}
+
 	for(var x in organizations){
 		if (organizations.hasOwnProperty(x)){
 			var obj = organizations[x];
@@ -238,9 +267,13 @@ var text = "";
 				"</td><td>" + obj['profileID'] + "</td></tr>";
 					
 		}
+		numOfOrganizations();
+		numOfHighIncome(obj['Country Income Level']);
+		numOfOrgYear(obj['Founding Year']);
 	}
-	/* text += "<tr><td colspan='4'>Total Days</td><td align='center' class='totnum'>" + totdays + "</td></tr>"; */
+	newtext = genNewText();
 	document.getElementById("orginfo").innerHTML = text;
+	document.getElementById("stats").innerHTML = newText;
 	document.getElementsByTagName("tr").onmouseover = function() {mouseOver()};
 	document.getElementByTagName("tr").onmouseout = function() {mouseOut()}; 
 	function mouseOver() {
