@@ -251,7 +251,7 @@ function numOfOrgYear(m){
 	}
 }
 function generateNewText(){
-	return "<tr><td colspan='4'>Total Organizations </td><td align='center'>" + orgNum + "</td></tr>"
+	newtext =  "<tr><td colspan='4'>Total Organizations </td><td align='center'>" + orgNum + "</td></tr>"
 	+ "<tr><td = colspan'4'> Number of High Income Countries </td><td align = 'center'>" + income +"</td></tr>"
 	 + "<tr><td colspan='4'>Number of Organizations Created After 2000</td><td align='center'>" + year + "</td></tr>";
 
@@ -271,7 +271,7 @@ function generateNewText(){
 		numOfHighIncome(obj['Country Income Level']);
 		numOfOrgYear(obj['Founding Year']);
 	}
-	newtext = genNewText();
+	genNewText();
 	document.getElementById("orginfo").innerHTML = text;
 	document.getElementById("stats").innerHTML = newText;
 	document.getElementsByTagName("tr").onmouseover = function() {mouseOver()};
