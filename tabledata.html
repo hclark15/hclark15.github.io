@@ -237,23 +237,11 @@ var orgNum=0;
 var income=0;
 var year=0;
 
-function numOfOrganizations(){
-	orgNum++;
-}
-function numOfHighIncome(d){
-	if(d=="High income"){
-		income++;
-	}
-}
-function numOfOrgYear(m){
-	if(parseInt(m)>=2000){
-		year++;
-	}
-}
+
 function generateNewText(){
-	newtext =  "<tr><td colspan='4'>Total Organizations </td><td align='center'>" + orgNum + "</td></tr>"
-	+ "<tr><td = colspan'4'> Number of High Income Countries </td><td align = 'center'>" + income +"</td></tr>"
-	 + "<tr><td colspan='4'>Number of Organizations Created After 2000</td><td align='center'>" + year + "</td></tr>";
+	newtext =  "<tr><td colspan='12'>"+"Total Organizations"+" </td><td align='center'>" + orgNum + "</td></tr>"
+	+ "<tr><td = colspan'12'>"+ "Number of High Income Countries"+" </td><td align = 'center'>" + income +"</td></tr>"
+	 + "<tr><td colspan='12'>"+"Number of Organizations Created After 2000"+"</td><td align='center'>" + year + "</td></tr>";
 
 }
 
@@ -267,9 +255,14 @@ function generateNewText(){
 				"</td><td>" + obj['profileID'] + "</td></tr>";
 					
 		}
-		numOfOrganizations();
-		numOfHighIncome(obj['Country Income Level']);
-		numOfOrgYear(obj['Founding Year']);
+		orgNum++;
+		if(obj['Country Income Level'] == "High income"){
+		       income++;
+		 }
+		 if(obj['Founding Year'].parseInt >= 2000){
+			 year++;
+		 }
+		      
 	}
 	generateNewText();
 	document.getElementById("orginfo").innerHTML = text;
