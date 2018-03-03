@@ -275,12 +275,12 @@ function generateNewText(){
 	document.getElementById("orginfo").innerHTML = text;
 	document.getElementById("stats").innerHTML = newText;
 	document.getElementsByTagName("tr").onmouseover = function() {mouseOver()};
-	document.getElementByTagName("tr").onmouseout = function() {mouseOut()}; 
+	document.getElementsByTagName("tr").onmouseout = function() {mouseOut()}; 
 	function mouseOver() {
-		document.getElementByTagName("tr").style.backgroundColor = "red";
+		document.getElementsByTagName("tr").style.backgroundColor = "red";
 	}
 	function mouseOut() {
-		document.getElementByTagName("tr").style.backgroundColor = "white";
+		document.getElementsByTagName("tr").style.backgroundColor = "white";
 	}
 
 							 
