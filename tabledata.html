@@ -245,15 +245,17 @@ var year=0;
 
 function generateNewText(ele){
 	for(var y in organizations){
-		if(organizations[y]=ele){
+		if(organizations.hasOwnProperty(y)){
 			var statObj = organizations[y];
-			orgNum--;
-			if(statObj['Country Income Level'] == "High income"){
-				income--;
+			if(statObj==ele){
+				orgNum--;
+				if(statObj['Country Income Level'] == "High income"){
+					income--;
+				}
+				 if(parseInt(statObj['Founding Year']) >= 2000){
+					 year--;
+				 }
 			}
-			 if(parseInt(statObj['Founding Year']) >= 2000){
-				 year--;
-			 }
 		}
 	}
 
