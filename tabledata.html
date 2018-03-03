@@ -305,13 +305,13 @@ function generateNewText(ele){
 	function hideRow(ele){
 		ele.style.display="none";
 		orgNum--;
-		if(obj['Country Income Level'] == "High income"){
+		if(ele['Country Income Level'] == "High income"){
 			income--;
 		}
-		if(parseInt(obj['Founding Year']) >= 2000){
+		if(parseInt(ele['Founding Year']) >= 2000){
 			year--;
 		}
-		if(obj['Size']=="1000+"){
+		if(ele['Size']=="1000+"){
 		   largeCompanies--;
 		}
 		
