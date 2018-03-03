@@ -286,7 +286,7 @@ function generateNewText(ele){
 		
 		      
 	}
-	generateNewText();
+	//generateNewText();
 	document.getElementById("orginfo").innerHTML = text;
 	document.getElementById("stats").innerHTML =  "<tr><td colspan='12'>"+"Total Organizations"+" </td><td align='center'>" + orgNum + "</td></tr>"
 	+ "<tr><td colspan ='12'>"+ "Number of High Income Countries"+" </td><td align = 'center'>" + income +"</td></tr>"
@@ -304,7 +304,18 @@ function generateNewText(ele){
 	}
 	function hideRow(ele){
 		ele.style.display="none";
-		generateNewText(ele);
+		orgNum--;
+		if(obj['Country Income Level'] == "High income"){
+			income--;
+		}
+		if(parseInt(obj['Founding Year']) >= 2000){
+			year--;
+		}
+		if(obj['Size']=="1000+"){
+		   largeCompanies--;
+		}
+		
+		//generateNewText(ele);
 		document.getElementById("stats").innerHTML =  "<tr><td colspan='12'>"+"Total Organizations"+" </td><td align='center'>" + orgNum + "</td></tr>"
 		+ "<tr><td colspan ='12'>"+ "Number of High Income Countries"+" </td><td align = 'center'>" + income +"</td></tr>"
 		+ "<tr><td colspan='12'>"+"Number of Organizations Created In the Twenty First Century"+"</td><td align='center'>" + year + "</td></tr>"
