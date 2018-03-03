@@ -263,7 +263,7 @@ function generateNewText(){
 		if(obj['Country Income Level'] == "High income"){
 		       income++;
 		 }
-		 if(obj['Founding Year'].parseInt >= 2000){
+		 if(parseInt(obj['Founding Year']) >= 2000){
 			 year++;
 		 }
 		      
@@ -285,6 +285,18 @@ function generateNewText(){
 	}
 	function hideRow(ele){
 		ele.style.display="none";
+		orgNum--;
+		if(obj['Country Income Level'] == "High income"){
+		       income--;
+		 }
+		 if(parseInt(obj['Founding Year']) >= 2000){
+			 year--;
+		 }
+		document.getElementById("stats").innerHTML =  "<tr><td colspan='12'>"+"Total Organizations"+" </td><td align='center'>" + orgNum + "</td></tr>"
+	+ "<tr><td colspan ='12'>"+ "Number of High Income Countries"+" </td><td align = 'center'>" + income +"</td></tr>"
+	 + "<tr><td colspan='12'>"+"Number of Organizations Created In the Twenty First Century"+"</td><td align='center'>" + year + "</td></tr>";
+
+		
 	}
 
 							 
