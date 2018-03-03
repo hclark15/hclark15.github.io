@@ -310,7 +310,7 @@ var largeCompanies = 0;
 		var incomeCompare=y[2];
 		orgNum--;
 		console.log(incomeCompare == "High income");
-		if(incomeCompare == "High income"){
+		if(incomeCompare == "<td>High income</td>"){
 			
 			income--;
 			console.log(income);
@@ -318,7 +318,7 @@ var largeCompanies = 0;
 		if(parseInt(y[9]) >= 2000){
 			year--;
 		}
-		if(y[10]=="1000+"){
+		if(y[10].innerHTML=="1000+"){
 		   largeCompanies--;
 		}
 		
