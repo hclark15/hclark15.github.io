@@ -306,9 +306,10 @@ var largeCompanies = 0;
 		console.log(ele);
 		ele.style.display="none";
 		var y = ele.cells;
-		console.log(y[2]);
+		console.log(y[9]);
+		var incomeCompare=y[2];
 		orgNum--;
-		if(y[2] === "High income"){
+		if(incomeCompare == "High income"){
 			console.log(income);
 			income--;
 			console.log(income);
