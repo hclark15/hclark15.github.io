@@ -243,19 +243,16 @@ var year=0;
 
 
 
-function generateNewText(){
-	orgNum=0;
-	income=0;
-	year=0;
+function generateNewText(ele){
 	for(var y in organizations){
-		if(organizations.hasOwnProperty(y)){
+		if(organizations[y]=ele)){
 			var statObj = organizations[y];
-			orgNum++;
+			orgNum--;
 			if(statObj['Country Income Level'] == "High income"){
-				income++;
+				income--;
 			}
 			 if(parseInt(statObj['Founding Year']) >= 2000){
-				 year++;
+				 year--;
 			 }
 		}
 	}
@@ -272,6 +269,14 @@ function generateNewText(){
 				"</td><td>" + obj['profileID'] + "</td></tr>";
 					
 		}
+		orgNum++;
+		if(obj['Country Income Level'] == "High income"){
+			income++;
+		}
+		if(parseInt(obj['Founding Year']) >= 2000){
+			year++;
+		}
+		
 		      
 	}
 	generateNewText();
@@ -291,7 +296,7 @@ function generateNewText(){
 	}
 	function hideRow(ele){
 		ele.style.display="none";
-		generateNewText();
+		generateNewText(ele);
 		document.getElementById("stats").innerHTML =  "<tr><td colspan='12'>"+"Total Organizations"+" </td><td align='center'>" + orgNum + "</td></tr>"
 		+ "<tr><td colspan ='12'>"+ "Number of High Income Countries"+" </td><td align = 'center'>" + income +"</td></tr>"
 		+ "<tr><td colspan='12'>"+"Number of Organizations Created In the Twenty First Century"+"</td><td align='center'>" + year + "</td></tr>";
