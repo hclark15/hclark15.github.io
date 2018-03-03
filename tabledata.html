@@ -308,7 +308,7 @@ var largeCompanies = 0;
 		var y = ele.cells;
 		console.log(y[2]);
 		orgNum--;
-		if(y[2] == "High income"){
+		if(y[2].equals("High income")){
 			console.log(income);
 			income--;
 			console.log(income);
@@ -316,7 +316,7 @@ var largeCompanies = 0;
 		if(parseInt(y[9]) >= 2000){
 			year--;
 		}
-		if(y[10]=="1000+"){
+		if(y[10].equals("1000+")){
 		   largeCompanies--;
 		}
 		
