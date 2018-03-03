@@ -240,6 +240,7 @@ var newText="";
 var orgNum=0;
 var income=0;
 var year=0;
+var largeCompanies = 0;
 
 
 
@@ -278,6 +279,10 @@ function generateNewText(ele){
 		if(parseInt(obj['Founding Year']) >= 2000){
 			year++;
 		}
+		if(obj['Size']=="1000"){
+		   largeCompies++;
+		}
+		   
 		
 		      
 	}
@@ -285,7 +290,8 @@ function generateNewText(ele){
 	document.getElementById("orginfo").innerHTML = text;
 	document.getElementById("stats").innerHTML =  "<tr><td colspan='12'>"+"Total Organizations"+" </td><td align='center'>" + orgNum + "</td></tr>"
 	+ "<tr><td colspan ='12'>"+ "Number of High Income Countries"+" </td><td align = 'center'>" + income +"</td></tr>"
-	 + "<tr><td colspan='12'>"+"Number of Organizations Created In the Twenty First Century"+"</td><td align='center'>" + year + "</td></tr>";
+	 + "<tr><td colspan='12'>"+"Number of Organizations Created In the Twenty First Century"+"</td><td align='center'>" + year + "</td></tr>"
+	+ "<tr><td colspan='12'>" + "Number of Large Organizations"+"</td><td align = 'center'>"+largeCompanies+"</td></tr>";
 
 	
 	/*document.getElementsByTagName("table[0]").addEventListener("mouseover", mouseOver);
@@ -301,7 +307,9 @@ function generateNewText(ele){
 		generateNewText(ele);
 		document.getElementById("stats").innerHTML =  "<tr><td colspan='12'>"+"Total Organizations"+" </td><td align='center'>" + orgNum + "</td></tr>"
 		+ "<tr><td colspan ='12'>"+ "Number of High Income Countries"+" </td><td align = 'center'>" + income +"</td></tr>"
-		+ "<tr><td colspan='12'>"+"Number of Organizations Created In the Twenty First Century"+"</td><td align='center'>" + year + "</td></tr>";
+		+ "<tr><td colspan='12'>"+"Number of Organizations Created In the Twenty First Century"+"</td><td align='center'>" + year + "</td></tr>"
+		+"<tr><td colspan='12'>" + "Number of Large Organizations"+"</td><td align = 'center'>"+largeCompanies+"</td></tr>";
+
 
 		
 	}
