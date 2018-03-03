@@ -275,8 +275,8 @@ function generateNewText(){
 	document.getElementById("orginfo").innerHTML = text;
 	document.getElementById("stats").innerHTML = newText;
 	
-	document.getElementsByTagName("tr").onmouseover = function() {mouseOver()};
-	document.getElementsByTagName("tr").onmouseout = function() {mouseOut()}; 
+	document.getElementsByTagName("tr").addEventListener("mouseover", mouseOver);
+	document.getElementsByTagName("tr").addEventListener("mouseout", mouseOut); 
 	function mouseOver() {
 		document.getElementsByTagName("tr").style.backgroundColor = "red";
 	}
