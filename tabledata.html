@@ -244,7 +244,7 @@ var largeCompanies = 0;
 
 
 
-function generateNewText(ele){
+/*function generateNewText(ele){
 	for(var y in organizations){
 		if(organizations.hasOwnProperty(y)){
 			var statObj = organizations[y];
@@ -260,7 +260,7 @@ function generateNewText(ele){
 		}
 	}
 
-}
+}*/
 
 	for(var x in organizations){
 		if (organizations.hasOwnProperty(x)){
@@ -304,14 +304,15 @@ function generateNewText(ele){
 	}
 	function hideRow(ele){
 		ele.style.display="none";
+		var y = ele.cells;
 		orgNum--;
-		if(ele['Country Income Level'] == "High income"){
+		if(y[2] == "High income"){
 			income--;
 		}
-		if(parseInt(ele['Founding Year']) >= 2000){
+		if(parseInt(y[9]) >= 2000){
 			year--;
 		}
-		if(ele['Size']=="1000+"){
+		if(y[10]=="1000+"){
 		   largeCompanies--;
 		}
 		
