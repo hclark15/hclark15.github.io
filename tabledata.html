@@ -243,25 +243,6 @@ var year=0;
 var largeCompanies = 0;
 
 
-
-/*function generateNewText(ele){
-	for(var y in organizations){
-		if(organizations.hasOwnProperty(y)){
-			var statObj = organizations[y];
-			if(statObj==ele){
-				orgNum--;
-				if(statObj['Country Income Level'] == "High income"){
-					income--;
-				}
-				 if(parseInt(statObj['Founding Year']) >= 2000){
-					 year--;
-				 }
-			}
-		}
-	}
-
-}*/
-
 	for(var x in organizations){
 		if (organizations.hasOwnProperty(x)){
 			var obj = organizations[x];
@@ -286,7 +267,7 @@ var largeCompanies = 0;
 		
 		      
 	}
-	//generateNewText();
+	
 	document.getElementById("orginfo").innerHTML = text;
 	document.getElementById("stats").innerHTML =  "<tr><td colspan='12'>"+"Total Organizations"+" </td><td align='center'>" + orgNum + "</td></tr>"
 	+ "<tr><td colspan ='12'>"+ "Number of High Income Countries"+" </td><td align = 'center'>" + income +"</td></tr>"
@@ -294,8 +275,6 @@ var largeCompanies = 0;
 	+ "<tr><td colspan='12'>" + "Number of Large Organizations"+"</td><td align = 'center'>"+largeCompanies+"</td></tr>";
 
 	
-	/*document.getElementsByTagName("table[0]").addEventListener("mouseover", mouseOver);
-	document.getElementsByTagName("tr").addEventListener("mouseout", mouseOut);*/ 
 	function mouseOver(ele) {
 		ele.style.backgroundColor = "#d8bfd8";
 	}
@@ -306,23 +285,19 @@ var largeCompanies = 0;
 		console.log(ele);
 		ele.style.display="none";
 		var y = ele.cells;
-		console.log(y[2]);
-		var incomeCompare=y[2];
 		orgNum--;
-		console.log(incomeCompare == "High income");
-		if(incomeCompare == "<td>High income</td>"){
+		if(y[2].innerHTML == "High income"){
 			
 			income--;
 			console.log(income);
 		}
-		if(parseInt(y[9]) >= 2000){
+		if(parseInt(y[9].innerHTML) >= 2000){
 			year--;
 		}
 		if(y[10].innerHTML=="1000+"){
 		   largeCompanies--;
 		}
 		
-		//generateNewText(ele);
 		document.getElementById("stats").innerHTML =  "<tr><td colspan='12'>"+"Total Organizations"+" </td><td align='center'>" + orgNum + "</td></tr>"
 		+ "<tr><td colspan ='12'>"+ "Number of High Income Countries"+" </td><td align = 'center'>" + income +"</td></tr>"
 		+ "<tr><td colspan='12'>"+"Number of Organizations Created In the Twenty First Century"+"</td><td align='center'>" + year + "</td></tr>"
